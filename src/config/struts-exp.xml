@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="expJson" extends="json-default">
+	 <global-results>
+            <result name="login">/refresh.jsp</result>
+          <!--  oae golbal ex process -->      
+           <result name="root">/exception.jsp</result>
+     </global-results>
+
+     <global-exception-mappings>         
+           <exception-mapping exception="java.lang.Exception" result="root"/>
+     </global-exception-mappings>
+     <!-- end  oae golbal ex process -->
+		 <action name="expExcelPlayWater" class="expAction" method="expExcelPlayWater" /> 
+		 <action name="expExcelPlayCount" class="expAction" method="expExcelPlayCount" /> 
+		 <action name="expExcelDownWater" class="expAction" method="expExcelDownWater" /> 
+		 <action name="expExcelDownMana" class="expAction" method="expExcelDownMana" /> 
+		 <action name="expExcelDownCount" class="expAction" method="expExcelDownCount" />  
+		 <action name="expExcelPublish" class="expAction" method="expExcelPublish" /> 
+		 <action name="expExcelStore" class="expAction" method="expExcelStore" /> 
+		 <action name="expExcelPlayCountByMtrlArea" class="expAction" method="expExcelPlayCountByMtrlArea" /> 
+		 <action name="expExcelDownCountByMtarlBranch" class="expAction" method="expExcelDownCountByMtarlBranch" /> 
+		 <action name="expExcelDownCountByMtarlStore" class="expAction" method="expExcelDownCountByMtarlStore" /> 
+		 
+		 <action name="expTxtPlayWater" class="expAction" method="expTxtPlayWater" /> 
+		 <action name="expTxtPlayCount" class="expAction" method="expTxtPlayCount" /> 
+		 <action name="expTxtDownWater" class="expAction" method="expTxtDownWater" /> 
+		 <action name="expTxtDownMana" class="expAction" method="expTxtDownMana" /> 
+		 <action name="expTxtDownCount" class="expAction" method="expTxtDownCount" />
+		 <action name="expTxtPublish" class="expAction" method="expTxtPublish" />  
+		 <action name="expTxtStore" class="expAction" method="expTxtStore" />  
+		 <action name="expTxtPlayCountByMtrlArea" class="expAction" method="expTxtPlayCountByMtrlArea" /> 
+		 <action name="expTxtDownCountByMtarlBranch" class="expAction" method="expTxtDownCountByMtarlBranch" /> 
+		 <action name="expTxtDownCountByMtarlStore" class="expAction" method="expTxtDownCountByMtarlStore" /> 
+		  
+	</package> 
+	
+
+</struts>

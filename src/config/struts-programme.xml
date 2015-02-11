@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="programme" extends="struts-default" namespace="/programme">
+	 <global-results>
+            <result name="login">/refresh.jsp</result>
+          <!--  oae golbal ex process -->      
+           <result name="root">/exception.jsp</result>
+     </global-results>
+
+     <global-exception-mappings>         
+           <exception-mapping exception="java.lang.Exception" result="root"/>
+     </global-exception-mappings>
+     <!-- end  oae golbal ex process -->
+	 <!-- 片区管理 -->
+		<action name="programmeManager" class="programmeAction"> 
+			<result name="list">/programme/programmeList.jsp</result>  
+			<result name="receive">/programme/programmeReceive.jsp</result>
+				<result name="receive2">/programme/programmeReceive2.jsp</result>
+			<result name="showXls">/programme/down/downloadXls.jsp</result>
+			<result name="showTxt">/programme/down/downloadTxt.jsp</result>
+			
+			<result name="add">/programme/programmeAdd.jsp</result> 
+			<result name="edit">/programme/programmeEdit.jsp</result>    
+			<result name="programmeList">/publish/programmeList.jsp</result>    
+			<result name="Edit4rvw">/programme/programmeInfo4review.jsp</result>    
+			
+		</action>   
+	</package>
+
+	<package name="programmeJson" extends="json-default">
+	 <global-results>
+            <result name="login">/refresh.jsp</result>
+          <!--  oae golbal ex process -->      
+           <result name="root">/exception.jsp</result>
+     </global-results>
+
+     <global-exception-mappings>         
+           <exception-mapping exception="java.lang.Exception" result="root"/>
+     </global-exception-mappings>
+     <!-- end  oae golbal ex process -->
+		 <action name="getNotConfigData" class="programmeAction" method="getNotConfigData">
+            <result type="json">
+              <param name="root">dataMap</param>
+            </result>
+        </action>
+        <action name="getConfigedData" class="programmeAction" method="getConfigedData">
+            <result type="json">
+              <param name="root">dataList</param>
+            </result>
+        </action>   
+        <action name="delete" class="programmeAction" method="delete">
+            <result type="json">
+              <param name="root">result</param>
+            </result>
+        </action>   
+        <action name="deleteBatch" class="programmeAction" method="deleteBatch">
+            <result type="json">
+              <param name="root">result</param>
+            </result>
+        </action>   
+	</package> 
+	
+
+</struts>

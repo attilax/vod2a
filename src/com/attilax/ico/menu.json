@@ -1,0 +1,37 @@
+{
+	"File":"",
+	"Edit":"",
+	"View":"",
+	"Tools":"",
+	"Help":{
+		"welcome(欢迎页面）":"",
+		"---------------":"",
+		"help contents(帮助)":"",
+		"search(搜索)":"",
+		"Tips提示":"",
+		" support center 支持中心":"",
+		"refer参考":"",
+		"-------------":"",
+		"(commu) 交流中心":"",
+		"skype,qq":"",
+		"bbs":"",
+		"update检查更新":"",
+		" switch version切换版本":"",
+		"failt report故障报告":"",
+		"feedback产品反馈":"",
+		"-------------":"",
+		"impro plan产品改善计划":"",
+		"new feature新特性":"",
+		"product Center产品中心 ":"",
+		"-------------":"",
+		"about xxx(prod) 关于":"",
+		"about  attilax":""
+	},
+	"About xxProd":{
+		"Auth授权":"",
+		"Rights用户权利":"",
+		"Privace隐私权":""
+	},
+	"Donate(捐赠)":"",
+	"About Attilax(关于ATTIlax)":""
+	}

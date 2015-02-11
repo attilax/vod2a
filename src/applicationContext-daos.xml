@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  default-lazy-init="true"  xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+                           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+                           http://www.springframework.org/schema/tx   
+                           http://www.springframework.org/schema/tx/spring-tx-3.0.xsd  
+                           http://www.springframework.org/schema/aop   
+                           http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	
+	<!-- 用户管理 -->
+	<bean id="userInfoManagerDao" class="com.focusx.dao.impl.UserInfoManagerDaoImpl">
+    	<property name="sessionFactory" ref="sessionFactory"/>
+    </bean> 
+    
+     <!-- 数据字典  -->
+    <bean id="dictionaryDao" class="com.focusx.dictionary.dao.impl.GvDictionaryDaoImpl">
+    	<property name="sessionFactory" ref="sessionFactory" />
+    </bean> 
+    
+    <!-- 分公司管理 -->
+	<bean id="branchManagerDao" class="com.focusx.dao.impl.BranchManagerDaoImpl">
+    	<property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    
+
+    
+    <!-- 角色管理 -->
+    <bean id="roleManageDao" class="com.focusx.dao.impl.RoleManagerDaoImpl">
+    	<property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+        
+
+    
+    <!-- 分公司区域 -->
+    <bean id="tagDao" class="com.focusx.dao.impl.TagDaoImpl">
+    	<property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    
+
+    <bean id="taskDao" class="com.focusx.dao.impl.TaskDaoImpl">
+    	<property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    
+    <!-- 节目单 -->
+    <bean id="programmeDao" class="com.focusx.programme.dao.impl.ProgrammeDaoImpl">
+    	<property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    
+    <!-- 节目单详情  -->
+    <bean id="programmeDetailDao" class="com.focusx.programme.dao.impl.ProgrammeDetailDaoImpl">
+    	<property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    
+    <!-- 发布管理  -->
+    <bean id="publishDao" class="com.focusx.publish.dao.Impl.PublishDaoImpl">
+    	<property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    
+    <!-- 导出  -->
+    <bean id="expDao" class="com.focusx.exp.dao.ExpDaoImpl">
+    	<property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    
+    
+</beans>

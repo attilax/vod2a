@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+ <!-- o7d ati  此处是正则表达式，并非URL匹配地址 -->
+<!-- todox o88  with spr mvc intend. -->
+    <constant name="struts.devMode" value="true" />
+  	<constant name="struts.action.excludePattern" value="/dwr/.*,/dwr/test/.*,/spr/.*,/eqMntRun.jsp,/vod/eqMntRun.jsp,/comm/.*"></constant>
+  	<!-- <constant name="struts.allowed.action.names" value="[a-zA-Z]*" /> -->
+  	<!-- 数据字典 -->
+	<include file="config/struts-dictionary.xml"></include> 
+	<!-- 节目单,节目单详情 -->
+	<include file="config/struts-programme.xml"></include> 
+	<!-- 发布管理 -->
+	<include file="config/struts-publish.xml"></include>
+	<!-- zhoujianbin 设备管理、角色管理、设备验证、设备监控 -->
+	<include file="config/struts-zhoujb.xml"></include> 
+	<!-- 报表导出 -->
+	<include file="config/struts-exp.xml"></include> 
+	
+ <!-- ///o7d -->
+
+    <!--  o6c ati -->
+     <!-- 设置浏览器是否缓存静态内容,默认值为true(生产环境下使用),开发阶段最好关闭 -->
+    <constant name="struts.serve.static.browserCache" value="false"/>
+    <!-- 当struts的配置文件修改后,系统是否自动重新加载该文件,默认值为false(生产环境下使用),开发阶段最好打开 -->
+    <constant name="struts.configuration.xml.reload" value="true"/>
+      <include file="../struts-*.xml"></include>
+     <!-- /// o6c ati -->
+    
+  
+    
+    <package name="default" extends="struts-default" namespace="/weixin">
+    <!-- 拦截器todox login check machi o6c  -->
+        <interceptors>
+            <!-- 登录验证 -->
+            <interceptor name="loginVerify" class="com.focusx.interceptor.LoginInterceptor"></interceptor>
+            <interceptor-stack name="verify">
+                <interceptor-ref name="defaultStack"></interceptor-ref>
+                <interceptor-ref name="loginVerify"></interceptor-ref>
+            </interceptor-stack>
+        </interceptors>        
+        <default-interceptor-ref name="verify"></default-interceptor-ref>
+        
+        <global-results>
+            <result name="login">/refresh.jsp</result>
+          <!--  oae golbal ex process -->      
+           <result name="root">/exception.jsp</result>
+              <result name="ulinlin">/exception.jsp</result>
+     </global-results>
+
+     <global-exception-mappings>         
+            <exception-mapping exception="java.lang.Throwable" result="ulinlin"/>
+            
+            <exception-mapping exception="java.lang.Exception" result="ulinlin"/>
+              <exception-mapping exception="java.lang.ClassNotFoundException" result="ulinlin"/>
+              <!--  -->
+            
+     </global-exception-mappings>
+     <!-- end  oae golbal ex process -->
+    
+    	<!-- 系统登陆管理 -->
+    	<action name="adminManager" class="com.focusx.action.AdminAction">
+    		<result name="home" type="redirect">/home.jsp</result>
+    		<result name="success">/main.jsp</result>
+    		<result name="fail">/login.jsp</result>
+    		<result name="out">/login.jsp</result>
+    	</action>
+    	
+    	<!-- 用户管理 -->
+    	<action name="userManager" class="com.focusx.action.userInfoManager.UserInfoManagerAction">
+    	
+    		<!-- ati o8f-->
+    		<result name="listUsers_rd" type="redirect">/weixin/userManager!listUsers</result>
+    	
+    		<!-- 用户列表展示 -->
+    		<result name="listUsers">/user/listUsers.jsp</result>
+    		
+    		<!-- 用户具体信息展示  -->
+    		<result name="getUserById">/user/viewUser.jsp</result>
+    		
+    		<!-- 用户信息编辑 -->
+    		<result name="showEditUserPage">/user/editUser.jsp</result>
+    		
+    		<!-- 用户信息编辑 -->
+    		<result name="showEditUserPageAction" type="redirect">/weixin/userManager!showEditUserPage?id=${id}</result>
+    		
+    		<!-- 跳转到用户新增jsp -->
+    		<result name="showAddPage">/user/addUser.jsp</result>
+    		
+    		<!-- 用户新增成功后，转向到用户展示的Action，并传递参数用户ID -->
+    		<result name="addUserInfo" type="redirect">
+    			/weixin/userManager!getUserById?id=${id}
+    		</result>
+    		
+    		<!-- 用户信息修改成功后，转向到用户展示的Action，并传递参数用户ID   -->
+    		<result name="editUserInfo" type="redirect">
+    			/weixin/userManager!getUserById?id=${id}
+    		</result>
+    		
+    		<!-- 转向用户添加角色页面 -->
+    		<result name="showUserToRolePage">/user/addUserToRole.jsp</result>
+    		
+    		<!-- 转向选择分公司界面 -->
+    		<result name="groups">/user/chooseGroup.jsp</result>
+    	</action>
+    	
+        <!-- 分公司管理 -->
+    	<action name="branchManager" class="com.focusx.action.branchManager.BranchManagerAciton">
+    		<!-- 分组界面 -->
+    		<result name="list">/branch/listBranch.jsp</result>
+    		
+    		<!-- 列表界面 -->
+    		<result name="branchs">/branch/branchs.jsp</result>
+    		
+    		<!-- 联系人选择界面 -->
+    		<result name="listWeixinuser">/branch/choseWeixinuser.jsp</result>
+    		
+    		<!-- 下载二维码图片失败页面 -->
+    		<result name="error">/branch/error.jsp</result>
+    		
+    		<!-- 微信粉丝列表界面 -->
+    		<result name="listWeixinuser">/branch/listWeixinuser.jsp</result>
+    		    		
+    		<!-- 编辑界面 -->
+    		<result name="show">/branch/editBranch.jsp</result>
+    		
+    		<!-- 分公司列表警告界面 -->
+    		<result name="warning">/branch/warning.jsp</result>
+    		
+    		<!-- 未登陆跳转到登陆界面   -->
+    		<result name="login">/refresh.jsp</result>	
+    		    		
+    		<!-- 跳转到编辑界面   -->
+    		<result name="edit">/branch/editBranch2.jsp</result>
+    		
+    		<!-- 可供选择的分组界面 -->
+    		<result name="chooseBranch">/branch/chooseListBranch.jsp</result>
+    	</action>
+    	
+    
+    	
+    	<!-- 角色管理 -->
+    	<action name="roleManager" class="com.focusx.action.roleManager.RoleManagerAction">   	
+    		<!-- 角色列表 -->
+    		<result name="listRoles">/role/listRoles.jsp</result>
+    		
+    		<!-- 跳转到角色新增jsp -->
+    		<result name="showAddPage">/role/addRole.jsp</result>
+    		
+    		<!--角色新增成功后或编辑成功后，转向到角色展示的Action，并传递参数角色ID   -->
+    		<result name="showRole" type="redirect">
+    			/weixin/roleManager!showViewPage?id=${id}
+    		</result>
+    		
+    		<!-- 角色信息展示 -->
+    		<result name="viewRole">/role/viewRole.jsp</result>
+    		
+    		<!-- 角色编辑 -->
+    		<result name="editRolePage">/role/editRole.jsp</result>
+    		
+    		<!-- 转到角色授权界面 -->
+    		<result name="rolePower">/role/rolePower.jsp</result>
+    	</action>
+    	   
+    	
+    </package>
+    <package name="rand" extends="struts-default" namespace="/">
+    	<action name="rand" class="com.focusx.action.RandomImageAction">
+			<result type="stream">
+				<param name="contentType">image/jpeg</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+    </package>
+    
+    
+    <package name="atipkg" extends="struts-default" namespace="/ati">
+         <global-results>
+            <result name="login">/refresh.jsp</result>
+          <!--  oae golbal ex process -->      
+           <result name="root">/exception.jsp</result>
+     </global-results>
+
+     <global-exception-mappings>         
+           <exception-mapping exception="java.lang.Exception" result="root"/>
+     </global-exception-mappings>
+     <!-- end  oae golbal ex process -->
+     
+    	<action name="operLog_*"   method="{1}" class="cn.freeteam.action.OperLogAction">
+			<result name="list" >/oplog/operLog.jsp</result>
+</action>
+    </package>
+    
+<include file="struts_task.xml" />
+</struts>

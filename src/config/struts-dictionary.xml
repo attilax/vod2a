@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="dictionary" extends="struts-default" namespace="/dictionary">
+	 <global-results>
+            <result name="login">/refresh.jsp</result>
+          <!--  oae golbal ex process -->      
+           <result name="root">/exception.jsp</result>
+     </global-results>
+
+     <global-exception-mappings>         
+           <exception-mapping exception="java.lang.Exception" result="root"/>
+     </global-exception-mappings>
+     <!-- end  oae golbal ex process -->
+	 <!-- 片区管理 -->
+		<action name="dictionaryManager" class="dictionaryAction"> 
+			<result name="list">/dictionary/dictionaryList.jsp</result>  
+			<result name="add">/dictionary/dictionaryAdd.jsp</result>  
+			<result name="edit">/dictionary/dictionaryEdit.jsp</result>  
+			<result name="select">/dictionary/selectDictionaryList.jsp</result>  
+		</action>   
+	</package>
+
+	<package name="dictionaryJson" extends="json-default">
+	 <global-results>
+            <result name="login">/refresh.jsp</result>
+          <!--  oae golbal ex process -->      
+           <result name="root">/exception.jsp</result>
+     </global-results>
+
+     <global-exception-mappings>         
+           <exception-mapping exception="java.lang.Exception" result="root"/>
+     </global-exception-mappings>
+     <!-- end  oae golbal ex process -->
+		  <action name="ajaxDictionaryList" class="dictionaryAction" method="ajaxDictionaryList" >  
+			   <result type="json">
+	              <param name="root">dataList</param>
+	            </result> 
+            </action>
+		  <action name="ajaxDictionary" class="dictionaryAction" method="ajaxDictionary" >  
+			   <result type="json">
+	              <param name="root">objectJson</param>
+	            </result> 
+          </action>
+		  <action name="ajaxIsExistDictionary" class="dictionaryAction" method="ajaxIsExistDictionary" >  
+			   <result type="json">
+	              <param name="root">status</param>
+	            </result> 
+           </action>
+	</package> 
+
+</struts>

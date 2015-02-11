@@ -1,0 +1,44 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- 数据库配置 -->
+		<property name="connection.username">sa</property>
+		<property name="connection.url">jdbc:sqlserver://192.168.1.206:1433;databaseName= </property>
+		<property name="dialect">org.hibernate.dialect.SQLServerDialect</property>
+	
+			<property name="connection.password"> </property>
+	
+	
+		<property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+ 
+
+		<!--是否将运行期生成的SQL输出到日志以供调试-->
+		<property name="show_sql">true</property>
+		
+		<!--映射资源-->	
+		<mapping resource="hbm/TMbWeixinuser.hbm.xml" />
+		<mapping resource="hbm/TMbNews.hbm.xml"/>
+		<mapping resource="hbm/TMbGroup.hbm.xml"/>
+		<mapping resource="hbm/TMbGroupQrcode.hbm.xml"/>
+		<mapping resource="hbm/THDMember.hbm.xml"/>
+		<mapping resource="hbm/TMbTask.hbm.xml"/>
+
+
+		<mapping resource="hbm/TMbActivity.hbm.xml"/>
+		
+		<!--  
+		<mapping resource="hbm/Award.hbm.xml"/>
+		<mapping resource="hbm/AwardWeixin.hbm.xml"/>
+		
+		<mapping resource="hbm/TMbTag.hbm.xml"/>
+		
+		<mapping resource="hbm/TMbEventHistory.hbm.xml"/>
+		<mapping resource="hbm/TMbSignHistory.hbm.xml"/>
+		<mapping resource="hbm/TMbNewsHistory.hbm.xml"/>
+		<mapping resource="hbm/TMbActivityHistory.hbm.xml"/>
+		<mapping resource="hbm/THDMemberCostHistory.hbm.xml"/>
+		-->
+	</session-factory>
+</hibernate-configuration>

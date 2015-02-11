@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  default-lazy-init="true"  xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+                           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+                           http://www.springframework.org/schema/tx   
+                           http://www.springframework.org/schema/tx/spring-tx-3.0.xsd  
+                           http://www.springframework.org/schema/aop   
+                           http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	<!-- 用户管理 -->
+	<bean id="userInfoManagerAction" class="com.focusx.action.userInfoManager.UserInfoManagerAction" scope="prototype">
+    	<property name="userInfoManagerService" ref="userInfoManagerService" />
+    	<property name="branchManagerService" ref="branchManagerService"/>
+    </bean>
+    
+    <!-- 数据字典 -->
+   <bean id="dictionaryAction" class="com.focusx.dictionary.action.GvDictionaryAction" scope="prototype">
+    	<property name="dictionaryServcie" ref="dictionaryServcie" /> 
+    </bean>
+    
+    <!-- 用户登陆 -->
+    <bean id="adminAction" class="com.focusx.action.AdminAction">
+    	<property name="userInfoManagerService" ref="userInfoManagerService"/>
+    </bean>
+    
+    <!-- 分公司管理 -->
+    <bean id="branchManagerAciton" class="com.focusx.action.branchManager.BranchManagerAciton">
+    	<property name="branchManagerService" ref="branchManagerService"/>
+    </bean>
+    
+   
+    
+    <!-- 角色管理 -->
+    <bean id="roleManagerAction" class="com.focusx.action.roleManager.RoleManagerAction">
+    	<property name="roleManageService" ref="roleManageService"/>
+    </bean>
+    
+    
+    <!-- 任务管理 -->
+    <bean id="taskAction" class="com.focusx.action.TaskAction">
+    	<property name="taskService" ref="taskService"/>
+    </bean>
+    
+    <!-- 节目单,节目单详情-->
+    <bean id="programmeAction" class="com.focusx.programme.action.ProgrammeAction" scope="prototype">
+    	<property name="programmeService" ref="programmeService"/>
+    </bean>
+    
+    <!-- 发布管理-->
+    <bean id="publishAction" class="com.focusx.publish.action.PublishAction">
+    	<property name="publishService" ref="publishService"/> 
+    	<property name="programmeService" ref="programmeService"/>
+    </bean>
+    
+    <!-- 导出  Action-->
+    <bean id="expAction" class="com.focusx.exp.action.ExpAction" >
+    	<property name="expService" ref="expService"/>
+    </bean>
+    
+</beans>

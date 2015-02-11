@@ -1,0 +1,107 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- 数据库配置  
+		?autoRcConnect=true
+		err rate hesh yyeo ,,zeush db conn yeu reduce about 30%
+		 -->
+		
+				<property name="dialect"> org.hibernate.dialect.MySQLDialect</property>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://127.0.0.1:3306/db</property>
+		<property name="hibernate.connection.useUnicode">true</property>
+		<property name="hibernate.connection.characterEncoding">UTF-8</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password"></property>
+		
+		<!--  
+		if delete this cfg ,errrate speed hesh yyeo  -->
+		<property name="connection.autoReconnect">true</property>
+		<property name="connection.autoReconnectForPools">true</property>
+		<property name="connection.is-connection-validation-required">true</property>
+		
+		
+	
+	
+		
+		<!--
+		
+		
+			<property name="dialect">org.hibernate.dialect.SQLServerDialect</property>
+		<property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+		<property name="connection.url">jdbc:sqlserver://127.0.0.1:1433;databaseName= </property>
+		<property name="hibernate.connection.useUnicode">true</property>
+		<property name="hibernate.connection.characterEncoding">UTF-8</property>
+		<property name="connection.username">sa</property>
+		<property name="connection.password">focusx</property>
+	
+	
+	
+ 		<property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+		<property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+		<property name="hibernate.connection.url">jdbc:sqlserver://127.0.0.1:1433;databaseName= </property>
+		<property name="hibernate.connection.useUnicode">true</property>
+		<property name="hibernate.connection.characterEncoding">UTF-8</property>
+		<property name="hibernate.connection.username">sa</property>
+		<property name="hibernate.connection.password">gial1234</property>
+ 	 	-->
+ 			
+		<!-- C3P0连接池设定
+		
+		-->
+		<property name="hibernate.connection.provider_class">org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider</property>
+		<property name="hibernate.c3p0.max_size">300</property>
+		<property name="hibernate.c3p0.min_size">10</property>
+		<property name="hibernate.c3p0.timeout">30</property>	
+		<property name="hibernate.c3p0.max_statements">0</property>
+		<property name="hibernate.c3p0.idle_test_period">30</property>
+		<property name="hibernate.c3p0.acquire_increment">10</property>	
+		
+			<!--  add or delete errrate speed heshyyeo	-->
+		<property name="hibernate.c3p0.testConnectionOnCheckin">true</property> 
+		<property name="hibernate.c3p0.validate">true</property>
+	
+	 
+	 <!-- 
+	 timeout 30>>300 hesh yyeo.
+	 acquire_increment  10>100 heshyyeo..   bgo speed fear mele.gujyi sh ytsi yao 100g laosh bd sheok,znen wait..
+	 min_size: from 10>>100    errrate yyeo..conn time longer..cause conn more..to maxconn..wait relaese..
+	 if 100>>10     err yyeo ...speed fast ,,cause conn not to maxconn easyly..
+	 
+	##about auto close
+	 errrate hesh yyeo jmeter..speed yyeo..
+	   -->
+		<property name="hibernate.c3p0.unreturnedConnectionTimeout">600</property>
+		<property name="hibernate.c3p0.maxConnectionAge">600</property>
+		
+		
+				<!--是否将运行期生成的SQL输出到日志以供调试-->
+		<property name="show_sql">true</property>
+		
+		<!--映射资源-->	
+			<mapping class="com.focusx.elmt.GvMaterial" />
+			<!--
+		<mapping resource="hbm/TMbWeixinuser.hbm.xml" />
+		<mapping resource="hbm/TMbNews.hbm.xml"/>
+		<mapping resource="hbm/TMbGroup.hbm.xml"/>
+		<mapping resource="hbm/TMbGroupQrcode.hbm.xml"/>
+		<mapping resource="hbm/THDMember.hbm.xml"/>
+		<mapping resource="hbm/TMbTask.hbm.xml"/>
+
+<mapping resource="hbm/Share.hbm.xml"/>
+		<mapping resource="hbm/Activity.hbm.xml"/>
+		<mapping resource="hbm/Award.hbm.xml"/>
+		<mapping resource="hbm/AwardWeixin.hbm.xml"/>
+		
+		<mapping resource="hbm/TMbTag.hbm.xml"/>
+		
+		<mapping resource="hbm/TMbEventHistory.hbm.xml"/>
+		<mapping resource="hbm/TMbSignHistory.hbm.xml"/>
+		<mapping resource="hbm/TMbNewsHistory.hbm.xml"/>
+		<mapping resource="hbm/TMbActivityHistory.hbm.xml"/>
+		<mapping resource="hbm/THDMemberCostHistory.hbm.xml"/>
+		-->
+	</session-factory>
+</hibernate-configuration>

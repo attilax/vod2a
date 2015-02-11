@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+
+
+<!-- todox o91 jeig nameespace will be   attach resultType zuchen yg  fullNameClass for map -->
+<mapper namespace="com.mijie.homi.domain.mood.Mood4full">
+
+   <select id="getLockTables" parameterType="int" resultType="java.util.HashMap">
+      
+         <![CDATA[ select            request_session_id spid,           OBJECT_NAME(resource_associated_entity_id) tableName        from            sys.dm_tran_locks       where            resource_type='OBJECT'
+ ]]>
+   </select>
+  
+   <!-- where id  <=#{id} and timelineId=0 -->
+   <select id="getRecently100" parameterType="int" resultType="java.util.HashMap">
+      
+         <![CDATA[ select    * from mood4full  where id  <=#{id}  
+         order by id desc   limit 100  ]]>
+   </select>
+   
+   <!--  
+      <select id="listRecentlyLoginUserMood" parameterType="map" resultType="Mood">
+    select m.* from  userExtInfo as e join mood as m
+on m.id=e.moodId
+where e.lastLoginAt >= #{atleastLastLoginAt}
+order by e.lastLoginAt desc 
+limit #{offset},#{limit}
+   </select>
+   -->
+   
+      <select id="moodsByIds" parameterType="string" resultType="java.util.HashMap">
+    select *,u.id uid,e.lastloginat from mood m,user u,userExtInfo e  where  m.userid=u.id and u.id=e.id and m.id in ( ${_parameter} ) order by m.id desc limit 100 
+
+   </select>
+   
+   <select id="findRecords" parameterType="String" resultType="java.util.HashMap">  
+   ${value}
+</select> 
+   
+   </mapper>

@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="default" location="290,235" size="2625,6685">
+    <action name="adminManager" location="1782,4998" size="150,104">
+      <result name="home">
+        <resourceEdge source="home" routing="0" target="home.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="main.jsp" />
+      </result>
+      <result name="fail">
+        <resourceEdge source="fail" routing="0" target="login.jsp" />
+      </result>
+      <result name="out">
+        <resourceEdge source="out" routing="0" target="login.jsp" />
+      </result>
+    </action>
+    <action name="userManager" location="1782,5411" size="150,188">
+      <result name="listUsers">
+        <resourceEdge source="listUsers" routing="0" target="listUsers.jsp" />
+      </result>
+      <result name="getUserById">
+        <resourceEdge source="getUserById" routing="0" target="viewUser.jsp" />
+      </result>
+      <result name="showEditUserPage">
+        <resourceEdge source="showEditUserPage" routing="0" target="editUser.jsp" />
+      </result>
+      <result name="showAddPage">
+        <resourceEdge source="showAddPage" routing="0" target="addUser.jsp" />
+      </result>
+      <result name="addUserInfo" />
+      <result name="editUserInfo" />
+      <result name="showUserToRolePage">
+        <resourceEdge source="showUserToRolePage" routing="0" target="addUserToRole.jsp" />
+      </result>
+      <result name="groups">
+        <resourceEdge source="groups" routing="0" target="chooseGroup.jsp" />
+      </result>
+    </action>
+    <action name="branchManager" location="312,5400" size="150,209">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="listBranch.jsp" />
+      </result>
+      <result name="branchs">
+        <resourceEdge source="branchs" routing="0" target="branchs.jsp" />
+      </result>
+      <result name="listWeixinuser">
+        <resourceEdge source="listWeixinuser" routing="0" target="listWeixinuser.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+      <result name="listWeixinuser">
+        <resourceEdge source="listWeixinuser" routing="0" target="listWeixinuser.jsp" />
+      </result>
+      <result name="show">
+        <resourceEdge source="show" routing="0" target="editBranch.jsp" />
+      </result>
+      <result name="warning">
+        <resourceEdge source="warning" routing="0" target="warning.jsp" />
+      </result>
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="refresh.jsp" />
+      </result>
+      <result name="edit">
+        <resourceEdge source="edit" routing="0" target="editBranch2.jsp" />
+      </result>
+    </action>
+    <action name="materialManager" location="312,4186" size="150,188">
+      <result name="listMaterial">
+        <resourceEdge source="listMaterial" routing="0" target="listMaterial.jsp" />
+      </result>
+      <result name="addMaterial">
+        <resourceEdge source="addMaterial" routing="0" target="addMaterial.jsp" />
+      </result>
+      <result name="addMoreMaterial">
+        <resourceEdge source="addMoreMaterial" routing="0" target="addMoreMaterial.jsp" />
+      </result>
+      <result name="edit">
+        <resourceEdge source="edit" routing="0" target="editMaterial.jsp" />
+      </result>
+      <result name="editMore">
+        <resourceEdge source="editMore" routing="0" target="editMoreMaterial.jsp" />
+      </result>
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="refresh.jsp" />
+      </result>
+      <result name="warning">
+        <resourceEdge source="warning" routing="0" target="warning.jsp" />
+      </result>
+      <result name="preview_more">
+        <resourceEdge source="preview_more" routing="0" target="preview_more.jsp" />
+      </result>
+    </action>
+    <action name="roleManager" location="312,77" size="150,146">
+      <result name="listRoles">
+        <resourceEdge source="listRoles" routing="0" target="listRoles.jsp" />
+      </result>
+      <result name="showAddPage">
+        <resourceEdge source="showAddPage" routing="0" target="addRole.jsp" />
+      </result>
+      <result name="showRole" />
+      <result name="viewRole">
+        <resourceEdge source="viewRole" routing="0" target="viewRole.jsp" />
+      </result>
+      <result name="editRolePage">
+        <resourceEdge source="editRolePage" routing="0" target="editRole.jsp" />
+      </result>
+      <result name="rolePower">
+        <resourceEdge source="rolePower" routing="0" target="rolePower.jsp" />
+      </result>
+    </action>
+    <action name="actawardManager" location="1257,87" size="150,125">
+      <result name="listActAward">
+        <resourceEdge source="listActAward" routing="0" target="listActAward.jsp" />
+      </result>
+      <result name="showAddActAward">
+        <resourceEdge source="showAddActAward" routing="0" target="addActAward.jsp" />
+      </result>
+      <result name="showActAward" />
+      <result name="viewActAward">
+        <resourceEdge source="viewActAward" routing="0" target="viewActAward.jsp" />
+      </result>
+      <result name="editActAward">
+        <resourceEdge source="editActAward" routing="0" target="editActAward.jsp" />
+      </result>
+    </action>
+    <action name="activityManager" location="2412,45" size="150,209">
+      <result name="listActivity">
+        <resourceEdge source="listActivity" routing="0" target="listActivity.jsp" />
+      </result>
+      <result name="showAddActivity">
+        <resourceEdge source="showAddActivity" routing="0" target="addActivity.jsp" />
+      </result>
+      <result name="showActivity" />
+      <result name="viewActivity">
+        <resourceEdge source="viewActivity" routing="0" target="viewActivity.jsp" />
+      </result>
+      <result name="editActivity">
+        <resourceEdge source="editActivity" routing="0" target="editActivity.jsp" />
+      </result>
+      <result name="showActAward">
+        <resourceEdge source="showActAward" routing="0" target="showActAward.jsp" />
+      </result>
+      <result name="chooseActAward">
+        <resourceEdge source="chooseActAward" routing="0" target="chooseActAward.jsp" />
+      </result>
+      <result name="listDraw">
+        <resourceEdge source="listDraw" routing="0" target="listDraw.jsp" />
+      </result>
+      <result name="showWinner">
+        <resourceEdge source="showWinner" routing="0" target="showWinner.jsp" />
+      </result>
+    </action>
+    <action name="weixinuserManager" location="2412,983" size="150,83">
+      <result name="listUser">
+        <resourceEdge source="listUser" routing="0" target="listWeixinuser.jsp" />
+      </result>
+      <result name="view">
+        <resourceEdge source="view" routing="0" target="viewWeixinuser.jsp" />
+      </result>
+      <result name="nullGroup">
+        <resourceEdge source="nullGroup" routing="0" target="nullGroup.jsp" />
+      </result>
+    </action>
+    <action name="listenManager" location="2412,1302" size="150,146">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="listListens.jsp" />
+      </result>
+      <result name="showListen" />
+      <result name="view">
+        <resourceEdge source="view" routing="0" target="viewListen.jsp" />
+      </result>
+      <result name="edit">
+        <resourceEdge source="edit" routing="0" target="editListen.jsp" />
+      </result>
+      <result name="add">
+        <resourceEdge source="add" routing="0" target="addListen.jsp" />
+      </result>
+      <result name="listenToTask">
+        <resourceEdge source="listenToTask" routing="0" target="listListenToTask.jsp" />
+      </result>
+    </action>
+    <action name="dataAnalysisManager" location="2412,3206" size="150,188">
+      <result name="listWeixins">
+        <resourceEdge source="listWeixins" routing="0" target="listWeixins.jsp" />
+      </result>
+      <result name="listNews">
+        <resourceEdge source="listNews" routing="0" target="listNews.jsp" />
+      </result>
+      <result name="listMembers">
+        <resourceEdge source="listMembers" routing="0" target="listMembers.jsp" />
+      </result>
+      <result name="listSigns">
+        <resourceEdge source="listSigns" routing="0" target="listSigns.jsp" />
+      </result>
+      <result name="listMenus">
+        <resourceEdge source="listMenus" routing="0" target="listMenus.jsp" />
+      </result>
+      <result name="listActivitys">
+        <resourceEdge source="listActivitys" routing="0" target="listActivitys.jsp" />
+      </result>
+      <result name="memberDetail">
+        <resourceEdge source="memberDetail" routing="0" target="memberDetail.jsp" />
+      </result>
+      <result name="listAll">
+        <resourceEdge source="listAll" routing="0" target="listAll.jsp" />
+      </result>
+    </action>
+    <action name="replyManager" location="2412,3783" size="150,83">
+      <result name="listReplys">
+        <resourceEdge source="listReplys" routing="0" target="listReplys.jsp" />
+      </result>
+      <result name="addReply">
+        <resourceEdge source="addReply" routing="0" target="addReply.jsp" />
+      </result>
+      <result name="editReply">
+        <resourceEdge source="editReply" routing="0" target="editReply.jsp" />
+      </result>
+    </action>
+    <action name="weixinManager" location="2412,3969" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="list.jsp" />
+      </result>
+      <result name="reply">
+        <resourceEdge source="reply" routing="0" target="tasksReply.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="rand" location="3715,24" size="180,71">
+    <action name="rand" location="17,25" size="150,41">
+      <result name="success" />
+    </action>
+  </package>
+  <package name="atipkg" location="3350,25" size="280,140">
+    <action name="operLog_*" location="67,59" size="150,41">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="operLog.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="home.jsp" path="/home.jsp" location="2970,5505" size="150,55" />
+  <webResource name="main.jsp" path="/main.jsp" location="2970,5120" size="150,55" />
+  <webResource name="login.jsp" path="/login.jsp" location="2970,5330" size="150,55" />
+  <webResource name="listUsers.jsp" path="/user/listUsers.jsp" location="2081,6975" size="150,55" />
+  <webResource name="viewUser.jsp" path="/user/viewUser.jsp" location="2254,6975" size="150,55" />
+  <webResource name="editUser.jsp" path="/user/editUser.jsp" location="2431,6975" size="150,55" />
+  <webResource name="addUser.jsp" path="/user/addUser.jsp" location="2605,6975" size="150,55" />
+  <webResource name="addUserToRole.jsp" path="/user/addUserToRole.jsp" location="2795,6975" size="150,55" />
+  <webResource name="chooseGroup.jsp" path="/user/chooseGroup.jsp" location="2976,5680" size="150,55" />
+  <webResource name="listBranch.jsp" path="/branch/listBranch.jsp" location="75,5680" size="150,55" />
+  <webResource name="branchs.jsp" path="/branch/branchs.jsp" location="115,5855" size="150,55" />
+  <webResource name="choseWeixinuser.jsp" path="/branch/choseWeixinuser.jsp" location="54,6030" size="150,55" />
+  <webResource name="error.jsp" path="/branch/error.jsp" location="123,6205" size="150,55" />
+  <webResource name="listWeixinuser.jsp" path="/branch/listWeixinuser.jsp" location="63,6380" size="150,55" />
+  <webResource name="editBranch.jsp" path="/branch/editBranch.jsp" location="72,6555" size="150,55" />
+  <webResource name="warning.jsp" path="/branch/warning.jsp" location="115,6730" size="150,55" />
+  <webResource name="refresh.jsp" path="/refresh.jsp" location="3145,4455" size="150,55" />
+  <webResource name="editBranch2.jsp" path="/branch/editBranch2.jsp" location="593,6975" size="150,55" />
+  <webResource name="listMaterial.jsp" path="/material/listMaterial.jsp" location="67,4455" size="150,55" />
+  <webResource name="addMaterial.jsp" path="/material/addMaterial.jsp" location="64,4630" size="150,55" />
+  <webResource name="addMoreMaterial.jsp" path="/material/addMoreMaterial.jsp" location="48,4805" size="150,55" />
+  <webResource name="editMaterial.jsp" path="/material/editMaterial.jsp" location="64,4980" size="150,55" />
+  <webResource name="editMoreMaterial.jsp" path="/material/editMoreMaterial.jsp" location="48,5155" size="150,55" />
+  <webResource name="warning.jsp" path="/material/warning.jsp" location="76,5330" size="150,55" />
+  <webResource name="preview_more.jsp" path="/material/preview_more.jsp" location="59,5505" size="150,55" />
+  <webResource name="listRoles.jsp" path="/role/listRoles.jsp" location="612,80" size="150,55" />
+  <webResource name="addRole.jsp" path="/role/addRole.jsp" location="437,80" size="150,55" />
+  <webResource name="viewRole.jsp" path="/role/viewRole.jsp" location="261,80" size="150,55" />
+  <webResource name="editRole.jsp" path="/role/editRole.jsp" location="122,325" size="150,55" />
+  <webResource name="rolePower.jsp" path="/role/rolePower.jsp" location="117,500" size="150,55" />
+  <webResource name="listActAward.jsp" path="/actaward/listActAward.jsp" location="1531,80" size="150,55" />
+  <webResource name="addActAward.jsp" path="/actaward/addActAward.jsp" location="1282,80" size="150,55" />
+  <webResource name="viewActAward.jsp" path="/actaward/viewActAward.jsp" location="1036,80" size="150,55" />
+  <webResource name="editActAward.jsp" path="/actaward/editActAward.jsp" location="793,80" size="150,55" />
+  <webResource name="listActivity.jsp" path="/activity/listActivity.jsp" location="2980,675" size="150,55" />
+  <webResource name="addActivity.jsp" path="/activity/addActivity.jsp" location="2977,500" size="150,55" />
+  <webResource name="viewActivity.jsp" path="/activity/viewActivity.jsp" location="2976,325" size="150,55" />
+  <webResource name="editActivity.jsp" path="/activity/editActivity.jsp" location="2697,80" size="150,55" />
+  <webResource name="showActAward.jsp" path="/activity/showActAward.jsp" location="2441,80" size="150,55" />
+  <webResource name="chooseActAward.jsp" path="/activity/chooseActAward.jsp" location="2190,80" size="150,55" />
+  <webResource name="listDraw.jsp" path="/activity/listDraw.jsp" location="2005,80" size="150,55" />
+  <webResource name="showWinner.jsp" path="/activity/showWinner.jsp" location="1783,80" size="150,55" />
+  <webResource name="listWeixinuser.jsp" path="/weixinuser/listWeixinuser.jsp" location="2958,1200" size="150,55" />
+  <webResource name="viewWeixinuser.jsp" path="/weixinuser/viewWeixinuser.jsp" location="2954,1025" size="150,55" />
+  <webResource name="nullGroup.jsp" path="/weixinuser/nullGroup.jsp" location="2969,850" size="150,55" />
+  <webResource name="listListens.jsp" path="/listen/listListens.jsp" location="2950,2075" size="150,55" />
+  <webResource name="viewListen.jsp" path="/listen/viewListen.jsp" location="2984,1900" size="150,55" />
+  <webResource name="editListen.jsp" path="/listen/editListen.jsp" location="2950,1725" size="150,55" />
+  <webResource name="addListen.jsp" path="/listen/addListen.jsp" location="2950,1550" size="150,55" />
+  <webResource name="listListenToTask.jsp" path="/listen/listListenToTask.jsp" location="2967,1375" size="150,55" />
+  <webResource name="listWeixins.jsp" path="/dataAnalysis/listWeixins.jsp" location="2962,3475" size="150,55" />
+  <webResource name="listNews.jsp" path="/dataAnalysis/listNews.jsp" location="2968,3300" size="150,55" />
+  <webResource name="listMembers.jsp" path="/dataAnalysis/listMembers.jsp" location="2956,3125" size="150,55" />
+  <webResource name="listSigns.jsp" path="/dataAnalysis/listSigns.jsp" location="2968,2950" size="150,55" />
+  <webResource name="listMenus.jsp" path="/dataAnalysis/listMenus.jsp" location="2964,2775" size="150,55" />
+  <webResource name="listActivitys.jsp" path="/dataAnalysis/listActivitys.jsp" location="2961,2600" size="150,55" />
+  <webResource name="memberDetail.jsp" path="/dataAnalysis/memberDetail.jsp" location="2951,2425" size="150,55" />
+  <webResource name="listAll.jsp" path="/dataAnalysis/listAll.jsp" location="2977,2250" size="150,55" />
+  <webResource name="listReplys.jsp" path="/reply/listReplys.jsp" location="2951,4000" size="150,55" />
+  <webResource name="addReply.jsp" path="/reply/addReply.jsp" location="2951,3825" size="150,55" />
+  <webResource name="editReply.jsp" path="/reply/editReply.jsp" location="2951,3650" size="150,55" />
+  <webResource name="list.jsp" path="/client/list.jsp" location="2970,4350" size="150,55" />
+  <webResource name="tasksReply.jsp" path="/client/tasksReply.jsp" location="2982,4175" size="150,55" />
+  <webResource name="operLog.jsp" path="/oplog/operLog.jsp" location="3420,220" size="150,55" />
+  <include file="../struts-*.xml" location="4010,10" size="150,30" />
+</Struts2Diagram>
+

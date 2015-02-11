@@ -1,0 +1,34 @@
+/* CSS Document */
+
+#listdivP1 li {
+	float: left;
+	height: 140px;
+	width: 300px;
+	
+	margin: 0px;
+	padding: 0px;
+}
+#listdivP1 {
+	margin: 0px;
+	padding: 0px;
+	height: 400px;
+}
+
+.lineP1  tr{
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: dotted;
+	border-left-style: none;
+	border-top-color: #FC3;
+	border-right-color: #FC3;
+	border-bottom-color: #FC3;
+	border-left-color: #FC3;
+	margin-bottom:7px;
+}
+.cateP1 td {
+	font-size: 24px;
+}

@@ -1,0 +1,10 @@
+信用卡账户信息 Account Summary	账单分期 >>>>>
+账单日
+Statement Date	到期还款日
+Payment Due Date	信用额度(人民币)
+Credit Limit(RMB)	人民币本期应还款额
+RMB Current Amount Due	人民币最低还款额
+RMB Minimum Amount Due	积分余额
+Rewards Points Balance
+2014/02/05	2014/02/24	￥14,000	￥1,754.60	￥982.78	96667
+注：您的信用额度为您名下多张信用卡共享。

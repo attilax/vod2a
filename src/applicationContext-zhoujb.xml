@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  default-lazy-init="true"  xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+                           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+                           http://www.springframework.org/schema/tx   
+                           http://www.springframework.org/schema/tx/spring-tx-3.0.xsd  
+                           http://www.springframework.org/schema/aop   
+                           http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+     <!-- 设备管理 DAO-->
+    <bean id="equipmentDAO" class="com.focusx.dao.impl.EquipmentDAOImpl">
+    	<property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    
+     <!-- 设备流水 DAO-->
+    <bean id="equipmentVeriyfDAO" class="com.focusx.dao.impl.EquipmentVeriyfDAOImpl">
+    	<property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    
+    <!-- 设备监控 DAO-->
+    <bean id="equipmentMonitorDAO" class="com.focusx.dao.impl.EquipmentMonitorDAOImpl">
+    	<property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    
+    <!-- 设备管理 Service-->
+    <bean id="equipmentService" class="com.focusx.service.impl.EquipmentServiceImpl">
+    	<property name="equipmentDAO" ref="equipmentDAO"/>
+    	<property name="branchManagerDao" ref="branchManagerDao"/>
+    </bean>
+    
+     <!-- 设备流水 Service-->
+    <bean id="equipmentVeriyfService" class="com.focusx.service.impl.EquipmentVeriyfServiceImpl">
+    	<property name="equipmentVeriyfDAO" ref="equipmentVeriyfDAO"/>
+    </bean>
+    
+     <!-- 设备监控 Service-->
+    <bean id="emService" class="com.focusx.service.impl.EquipmentMonitorfServiceImpl">
+    	<property name="equipmentMonitorfDAO" ref="equipmentMonitorDAO"/>
+    	<property name="equipmentDAO" ref="equipmentDAO"></property>
+    	<property name="branchManagerDao" ref="branchManagerDao"></property>
+    </bean>
+    
+    <!-- 设备管理 action-->
+    <bean id="equipmentAction" class="com.focusx.action.equipment.EquipmentAction">
+    	<property name="equipmentService" ref="equipmentService"/>
+    	<property name="equipmentVeriyfService" ref="equipmentVeriyfService"></property>
+    </bean>
+    
+      <!-- 设备流水action-->
+    <bean id="veriyfAction" class="com.focusx.action.equipment.VeriyfAction">
+    	<property name="equipmentVeriyfService" ref="equipmentVeriyfService"/>
+    	<property name="equipmentService" ref="equipmentService"></property>
+    </bean>
+    
+     <!-- 设备监控action-->
+    <bean id="monitorAction" class="com.focusx.action.equipment.MonitorAction">
+    	<property name="emService" ref="emService"/>
+    	<property name="equipmentService" ref="equipmentService"></property>
+    </bean>
+    
+    <!-- 角色人员配置 action-->
+    <bean id="roleUserConfigAction" class="com.focusx.action.roleManager.RoleUserConfigAction">
+    	<property name="userInfoManagerService" ref="userInfoManagerService"/>
+    </bean>
+    
+  
+    
+</beans>

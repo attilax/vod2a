@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  default-lazy-init="true" xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+                           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+                           http://www.springframework.org/schema/tx   
+                           http://www.springframework.org/schema/tx/spring-tx-3.0.xsd  
+                           http://www.springframework.org/schema/aop   
+                           http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	<!-- 用户管理 -->
+	<bean id="userInfoManagerService" class="com.focusx.service.impl.UserInfoManagerServiceImpl">
+    	<property name="userInfoManagerDao" ref="userInfoManagerDao"/>
+    </bean>
+    <!-- 数据字典 -->
+    <bean id="dictionaryServcie" class="com.focusx.dictionary.service.impl.GvDictionaryServcieImpl">
+    	<property name="dictionaryDao" ref="dictionaryDao"/> 
+    </bean>
+    
+    <!-- 分公司管理 -->
+	<bean id="branchManagerService" class="com.focusx.service.impl.BranchManagerServiceImpl">
+    	<property name="branchManagerDao" ref="branchManagerDao"/>
+    </bean>
+
+    
+    <!-- 角色管理 -->
+    <bean id="roleManageService" class="com.focusx.service.impl.RoleManageServiceImpl">
+    	<property name="roleManageDao" ref="roleManageDao"/>
+    </bean>
+    
+
+    
+    <!-- 分公司区域 -->
+    <bean id="tagService" class="com.focusx.service.impl.TagServiceImpl">
+    	<property name="tagDao" ref="tagDao"/>
+    </bean>
+
+    
+
+     <bean id="taskService" class="com.focusx.service.impl.TaskServiceImpl">
+    	<property name="taskDao" ref="taskDao"/>
+    </bean>
+
+
+    
+    <!-- 节目单,节目单详情 -->
+    <bean id="programmeService" class="com.focusx.programme.service.impl.ProgrammeServiceImpl">
+    	<property name="programmeDao" ref="programmeDao"/>
+    	<property name="programmeDetailDao" ref="programmeDetailDao"/>
+    	<property name="publishDao" ref="publishDao"/>
+    </bean>
+    
+    <!-- 发布管理,节目单 -->
+    <bean id="publishService" class="com.focusx.publish.service.Impl.PublishServiceImpl">
+    	<property name="publishDao" ref="publishDao"/>
+    	<property name="programmeDao" ref="programmeDao"/>
+    	<property name="equipmentDAO" ref="equipmentDAO" />
+    </bean>
+    
+    <!-- 导出  Action-->
+    <bean id="expService" class="com.focusx.exp.service.ExpService" >
+    	<property name="expDao" ref="expDao"/>
+    </bean>
+
+ 
+</beans>

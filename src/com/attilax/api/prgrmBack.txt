@@ -1,0 +1,4 @@
+{
+			   "dsId": 1268,     
+			  "equipmentId": 15,
+			 } 

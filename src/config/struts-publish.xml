@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="publish" extends="struts-default" namespace="/publish">
+	 <global-results>
+            <result name="login">/refresh.jsp</result>
+          <!--  oae golbal ex process -->      
+           <result name="root">/exception.jsp</result>
+     </global-results>
+
+     <global-exception-mappings>         
+           <exception-mapping exception="java.lang.Exception" result="root"/>
+     </global-exception-mappings>
+     <!-- end  oae golbal ex process -->
+	 <!-- 片区管理 -->
+		<action name="publishManager" class="publishAction"> 
+			<result name="list">/publish/publishList.jsp</result>  
+			<result name="add">/publish/publishAdd.jsp</result>  
+			<result name="edit">/publish/publishEdit.jsp</result>   
+			<result name="listProgramme">/programme/programmeList.jsp</result>   
+		</action>   
+	</package>
+
+	<package name="publishJson" extends="json-default">
+	 <global-results>
+            <result name="login">/refresh.jsp</result>
+          <!--  oae golbal ex process -->      
+           <result name="root">/exception.jsp</result>
+     </global-results>
+
+     <global-exception-mappings>         
+           <exception-mapping exception="java.lang.Exception" result="root"/>
+     </global-exception-mappings>
+     <!-- end  oae golbal ex process -->
+		    <action name="ajaxGroups" class="branchManagerAciton" method="ajaxGroups" >  
+			   <result type="json">
+	              <param name="root">listData</param>
+	            </result> 
+            </action>
+	</package> 
+
+</struts>

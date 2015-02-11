@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 设备管理 -->
+	<package name="equipment" extends="struts-default" namespace="/">
+	 <global-results>
+            <result name="login">/refresh.jsp</result>
+          <!--  oae golbal ex process -->      
+           <result name="root">/exception.jsp</result>
+     </global-results>
+
+     <global-exception-mappings>         
+           <exception-mapping exception="java.lang.Exception" result="root"/>
+     </global-exception-mappings>
+     <!-- end  oae golbal ex process -->
+    	<action name="equipment" class="com.focusx.action.equipment.EquipmentAction">
+    		<result name="list">/equipment/equipment_list.jsp</result>
+    		<result name="add">/equipment/equipment_add_or_update.jsp</result>
+    		<result name="update">/equipment/equipment_add_or_update.jsp</result>
+    		<result name="delete">/equipment/equipment_list.jsp</result>
+    		<result name="save">/equipment/equipment_add_or_update.jsp</result>
+    		<result name="save_return" type="redirect">equipment/equipment!list</result>
+    		<!--  
+    			<result name="input" type="redirect">equipment/equipment!list</result>
+    			-->
+    	</action>
+    </package>
+	<!-- 设备管理 JSON -->
+	<package name="ajaxEquipment" extends="json-default">
+	 <global-results>
+            <result name="login">/refresh.jsp</result>
+          <!--  oae golbal ex process -->      
+           <result name="root">/exception.jsp</result>
+     </global-results>
+
+     <global-exception-mappings>         
+           <exception-mapping exception="java.lang.Exception" result="root"/>
+     </global-exception-mappings>
+     <!-- end  oae golbal ex process -->
+		<action name="ajaxEquipment" class="com.focusx.action.equipment.EquipmentAction" >  
+			<result type="json">
+	        	<param name="root">data</param>
+	    	</result> 
+    	</action>
+	</package> 
+
+	<!-- 角色人员配置 -->
+	
+	<package name="roleUserConfig" extends="struts-default" namespace="/">
+	 <global-results>
+            <result name="login">/refresh.jsp</result>
+          <!--  oae golbal ex process -->      
+           <result name="root">/exception.jsp</result>
+     </global-results>
+
+     <global-exception-mappings>         
+           <exception-mapping exception="java.lang.Exception" result="root"/>
+     </global-exception-mappings>
+     <!-- end  oae golbal ex process -->
+    	<action name="roleUserConfig" class="com.focusx.action.roleManager.RoleUserConfigAction">
+    		<result name="list">/roleUserconfig/role_user_config_list.jsp</result>
+    		<result name="update">/roleUserconfig/role_user_config_update.jsp</result>
+    		<result name="assignRole">/roleUserconfig/assignRole.jsp</result>
+    	</action>
+    </package>
+	<!-- 角色人员配置 JSON -->
+	<package name="ajaxroleUserConfig" extends="json-default">
+	 <global-results>
+            <result name="login">/refresh.jsp</result>
+          <!--  oae golbal ex process -->      
+           <result name="root">/exception.jsp</result>
+     </global-results>
+
+     <global-exception-mappings>         
+           <exception-mapping exception="java.lang.Exception" result="root"/>
+     </global-exception-mappings>
+     <!-- end  oae golbal ex process -->
+		<action name="ajaxroleUserConfig" class="com.focusx.action.roleManager.RoleUserConfigAction" >  
+			<result type="json">
+	        	<param name="root">data</param>
+	    	</result> 
+    	</action>
+	</package> 
+
+	<!-- 设备监控 -->
+	<package name="monitors" extends="struts-default" namespace="/">
+	 <global-results>
+            <result name="login">/refresh.jsp</result>
+          <!--  oae golbal ex process -->      
+           <result name="root">/exception.jsp</result>
+     </global-results>
+
+     <global-exception-mappings>         
+           <exception-mapping exception="java.lang.Exception" result="root"/>
+     </global-exception-mappings>
+     <!-- end  oae golbal ex process -->
+    	<action name="monitors" class="com.focusx.action.equipment.MonitorAction">
+    		<result name="list">/equipment/monitors_list.jsp</result>
+    	</action>
+    </package>
+    
+	<!-- 设备监控 JSON -->
+	<package name="ajaxMonitors" extends="json-default">
+		<action name="ajaxMonitors" class="com.focusx.action.equipment.MonitorAction" >  
+			<result type="json">
+	        	<param name="root">data</param>
+	    	</result> 
+    	</action>
+	</package> 
+
+	<!-- 设备流水 -->
+	<package name="veriyf" extends="struts-default" namespace="/">
+	 <global-results>
+            <result name="login">/refresh.jsp</result>
+          <!--  oae golbal ex process -->      
+           <result name="root">/exception.jsp</result>
+     </global-results>
+
+     <global-exception-mappings>         
+           <exception-mapping exception="java.lang.Exception" result="root"/>
+     </global-exception-mappings>
+     <!-- end  oae golbal ex process -->
+    	<action name="veriyf" class="com.focusx.action.equipment.VeriyfAction">
+    		<result name="list">/equipment/veriyf_statistical_list.jsp</result>
+    	</action>
+    </package>
+    
+	<!-- 设备流水 JSON -->
+	<package name="ajaxVeriyf" extends="json-default">
+	 <global-results>
+            <result name="login">/refresh.jsp</result>
+          <!--  oae golbal ex process -->      
+           <result name="root">/exception.jsp</result>
+     </global-results>
+
+     <global-exception-mappings>         
+           <exception-mapping exception="java.lang.Exception" result="root"/>
+     </global-exception-mappings>
+     <!-- end  oae golbal ex process -->
+		<action name="ajaxVeriyf" class="com.focusx.action.equipment.VeriyfAction" >  
+			<result type="json">
+	        	<param name="root">data</param>
+	    	</result> 
+    	</action>
+	</package> 
+
+</struts>

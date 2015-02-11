@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- todox o91 
+	jeig def is jdbc.properties.  jeig sh err...
+	haosyeo must cfg jeig prop file..
+		
+	-->
+	<properties resource="jdbc.properties"></properties>
+	 
+
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+<!-- -def type="pooled"  ,can custom type="atipool"  >>> c3p0 etc -->
+			<dataSource type="POOLED">
+			  <property name="driver" value="${jdbc.driverClassName}"/>  
+                <property name="url" value="${jdbc.url}"/>  
+                <property name="username" value="${jdbc.username}"/>  
+                <property name="password" value="${jdbc.password}"/>  
+			</dataSource>
+
+			<!--  
+				<dataSource type="POOLED"> <property name="driver"
+				value="com.mysql.jdbc.Driver" /> <property name="url"
+				value="jdbc:mysql://192.168.0.132:3306/homi" /> <property
+				name="username" value="root" /> <property name="password"
+				value="password" /> <property name="poolMaximumActiveConnections"
+				value="15" /> <property name="poolMaximumCheckoutTime" value="5000"
+				/> <!-/- <property name="username" value="${username}" /> <property
+				name="password" value="${password}" /> -/-> </dataSource>
+			-->
+		</environment>
+	</environments>
+
+	<mappers>
+		<mapper resource="com/attilax/db/ibatishbm/index.xml" />
+	</mappers>
+</configuration> 
